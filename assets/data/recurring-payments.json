@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Apple iCloud",
+        "price": 3.98,
+        "interval": "month",
+        "billingDay": 12,
+        "nextBillingDate": "2025-10-12T00:00:00Z",
+        "image": "./assets/images/apple.png"
+    },
+    {
+        "name": "Giga",
+        "price": 20.37,
+        "interval": "month",
+        "billingDay": 13,
+        "nextBillingDate": "2025-10-13T00:00:00Z",
+        "image": "./assets/images/starhub.png"
+    },
+    {
+        "name": "Netflix",
+        "price": 29.98,
+        "interval": "month",
+        "billingDay": 30,
+        "nextBillingDate": "2025-10-30T00:00:00Z",
+        "image": "./assets/images/netflix.png"
+    }
+]
