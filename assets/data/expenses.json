@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Grab",
+        "category": "Private Transport",
+        "amount": 24.68,
+        "currency": "SGD",
+        "paymentMethod": "Credit Card",
+        "date": "2025-10-01T08:15:00Z"
+    },
+    {
+        "name": "Lunch",
+        "category": "Office Food",
+        "amount": 3.30,
+        "currency": "SGD",
+        "paymentMethod": "Debit Card",
+        "date": "2025-10-01T08:15:00Z"
+    },
+    {
+        "name": "Bus",
+        "category": "Public Transport",
+        "amount": 1.85,
+        "currency": "SGD",
+        "paymentMethod": "Credit Card",
+        "date": "2025-10-01T08:15:00Z"
+    },
+    {
+        "name": "Bus",
+        "category": "Public Transport",
+        "amount": 3.74,
+        "currency": "SGD",
+        "paymentMethod": "Credit Card",
+        "date": "2025-10-02T08:15:00Z"
+    },
+    {
+        "name": "Lunch",
+        "category": "Office Food",
+        "amount": 2.50,
+        "currency": "SGD",
+        "paymentMethod": "Debit Card",
+        "date": "2025-10-02T08:15:00Z"
+    },
+    {
+        "name": "Boost",
+        "category": "Drinks",
+        "amount": 5.50,
+        "currency": "SGD",
+        "paymentMethod": "Credit Card",
+        "date": "2025-10-02T08:15:00Z"
+    },
+    {
+        "name": "Grab",
+        "category": "Private Transport",
+        "amount": 27.70,
+        "currency": "SGD",
+        "paymentMethod": "Credit Card",
+        "date": "2025-10-03T08:15:00Z"
+    },
+    {
+        "name": "Lunch",
+        "category": "Office Food",
+        "amount": 3.30,
+        "currency": "SGD",
+        "paymentMethod": "Debit Card",
+        "date": "2025-10-03T08:15:00Z"
+    },
+    {
+        "name": "Bus",
+        "category": "Public Transport",
+        "amount": 1.85,
+        "currency": "SGD",
+        "paymentMethod": "Credit Card",
+        "date": "2025-10-03T08:15:00Z"
+    }
+]
