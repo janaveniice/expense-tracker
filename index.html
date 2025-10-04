@@ -68,7 +68,7 @@
     </section>
 
     <!-- Cards -->
-    <h1 class="mt-6 text-3xl mb-4">Cards</h1>
+    <h1 class="mt-6 text-3xl mb-4 font-semibold">Cards</h1>
     <div class="w-full max-w-md overflow-x-auto scroll-smooth snap-x snap-mandatory flex space-x-4">
       <!-- Card 1 -->
        <div class="snap-start min-w-[300px] h-auto bg-[#9DA39A] rounded-xl p-6 text-white shadow-lg flex flex-col flex-shrink-0">
@@ -127,6 +127,13 @@
         </section>
       </div>
     </div>
+
+    <!-- Recurring Payments -->
+    <h1 class="mt-6 text-3xl mb-4 font-semibold">Subscriptions</h1>
+    <div id="recurring-container" class="w-full max-w-md overflow-x-auto scroll-smooth snap-x snap-mandatory flex space-x-4">
+      <!-- Cards here -->
+    </div>
+
   </div>
 
   <!-- Bottom Navbar -->
@@ -160,5 +167,51 @@
       </button>
     </div>
   </div>
+
+  <script>
+    const STORAGE_KEY = 'recurringPayments';
+    const container = document.getElementById('recurring-container');
+
+    // Function to render cards from localStorage
+    function renderCards() {
+      const payments = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+      container.innerHTML = ''; // Clear container
+
+      payments.forEach(payment => {
+        const now = new Date();
+        const billingDate = new Date(payment.nextBillingDate);
+        const diffTime = billingDate - now;
+        const daysLeft = Math.max(Math.ceil(diffTime / (1000 * 60 * 60 * 24)), 0);
+
+        const card = document.createElement('div');
+        card.className = 'snap-start min-w-[200px] h-auto bg-[#E0DDCF] rounded-xl p-6 text-white shadow-lg flex flex-col flex-shrink-0';
+        card.innerHTML = `
+          <article class="rounded-full bg-white py-2 w-12 h-12 flex items-center justify-center">
+            <img src="${payment.image}" alt="${payment.name} Logo" class="h-10">
+          </article>
+          <span class="mt-4 text-2xl text-black font-semibold">${payment.name}</span>
+          <span class="text-lg text-black">$${payment.price.toFixed(2)}/${payment.interval}</span>
+          <span class="text-base text-gray-400">${daysLeft} day${daysLeft !== 1 ? 's' : ''} left</span>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Load data from JSON if localStorage is empty
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      fetch('./assets/data/recurring-payments.json')
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to fetch JSON');
+          return res.json();
+        })
+        .then(data => {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+          renderCards(); // Render after storing
+        })
+        .catch(err => console.error(err));
+    } else {
+      renderCards(); // Already in localStorage, render immediately
+    }
+  </script>
 </body>
 </html>
