@@ -174,39 +174,11 @@
     <!-- Form Content -->
     <div id="formContent" class="py-4 px-6 text-black">
       
-      <!-- EXPENSE FORM -->
-      <div id="expenseForm" class="w-full flex flex-row gap-4">
-        <article class="text-white flex flex-col mb-2 w-1/2">
-          <label class=" text-lg">Category</label>
-          <select class="w-full rounded-xl border border-gray-300 bg-white py-3 px-4 text-gray-700 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition">
-            <option>Private Transport</option>
-            <option>Public Transport</option>
-            <option>Office Food</option>
-            <option>Dine-out</option>
-            <option>Drinks</option>
-            <option>Grocery</option>
-            <option>Rental Bike</option>
-            <option>Bills</option>
-            <option>Shopping</option>
-            <option>Travel</option>
-            <option>Others</option>
-          </select>
-        </article>
-        <article class="text-white flex flex-col mb-2 w-1/2">
-          <label class="text-lg">Payment</label>
-          <select class="w-full rounded-xl border border-gray-300 bg-white py-3 px-4 text-gray-700 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition">
-            <option>Credit Card</option>
-            <option>Debit Card</option>
-            <option>Cash</option>
-          </select>
-        </article>
-      </div>
-
       <!-- INCOME FORM -->
       <form id="incomeForm" class="hidden w-full flex flex-col gap-4">
         <section class="flex flex-row justify-between gap-3 items-end">
           <article class="text-white flex flex-col mb-2 w-full">
-          <label class="text-lg">Source</label>
+            <label class="text-lg">Source</label>
             <select class="w-full rounded-3xl border border-gray-300 bg-white py-3 px-4 text-gray-700 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 transition">
               <option>Salary</option>
               <option>Allowance</option>
@@ -218,13 +190,10 @@
           </article>
           <article class="flex flex-col mb-2">
             <div class="relative">
-              <input 
-                type="date" 
-                class="absolute inset-0 opacity-0 cursor-pointer"
-              />
+              <input type="date" class="absolute inset-0 opacity-0 cursor-pointer" />
               <button type="button">
-                <!-- Calendar Icon (Tailwind Heroicons example) -->
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff" class="w-10 h-10 text-gray-700">
+                <!-- Calendar Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff" class="w-8 h-8">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </button>
@@ -236,7 +205,7 @@
         <article class="flex flex-row justify-center items-center w-full">
           <span class="text-white text-5xl mr-2">$</span>
           <input 
-            id="amountInput"
+            id="incomeAmount"
             type="text"
             placeholder="0.00"
             inputmode="decimal"
@@ -246,6 +215,75 @@
 
         <!-- Submit button -->
         <button type="submit" class="mt-4 bg-white text-black text-xl py-2 px-4 rounded-3xl">Add Income</button>
+      </form>
+
+
+      <!-- EXPENSE FORM -->
+      <form id="expenseForm" class="w-full flex flex-col gap-2">
+        <!-- Name & Date -->
+        <section class="flex flex-row justify-between gap-3 items-end">
+          <article class="text-white flex flex-col mb-2 w-full">
+            <label class="text-lg">Name</label>
+            <input 
+              type="text" 
+              placeholder="Expense Name" 
+              class="w-full rounded-3xl border border-gray-300 bg-white py-3 px-4 text-gray-700 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition"
+            />
+          </article>
+          <article class="flex flex-col mb-2">
+            <div class="relative">
+              <input type="date" class="absolute inset-0 opacity-0 cursor-pointer" />
+              <button type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff" class="w-8 h-8">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </button>
+            </div>
+          </article>
+        </section>
+
+        <!-- Category & Payment -->
+        <article class="flex flex-row gap-4">
+          <article class="text-white flex flex-col mb-2 w-1/2">
+            <label class=" text-lg">Category</label>
+            <select class="w-full rounded-3xl border border-gray-300 bg-white py-3 px-4 text-gray-700 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition">
+              <option>Private Transport</option>
+              <option>Public Transport</option>
+              <option>Office Food</option>
+              <option>Dine-out</option>
+              <option>Drinks</option>
+              <option>Grocery</option>
+              <option>Rental Bike</option>
+              <option>Bills</option>
+              <option>Shopping</option>
+              <option>Travel</option>
+              <option>Others</option>
+            </select>
+          </article>
+          <article class="text-white flex flex-col mb-2 w-1/2">
+            <label class="text-lg">Payment</label>
+            <select class="w-full rounded-3xl border border-gray-300 bg-white py-3 px-4 text-gray-700 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition">
+              <option>Credit Card</option>
+              <option>Debit Card</option>
+              <option>Cash</option>
+            </select>
+          </article>
+        </article>
+
+        <!-- Amount Input -->
+        <article class="flex flex-row justify-center items-center w-full">
+          <span class="text-white text-5xl mr-2">$</span>
+          <input 
+            id="expenseAmount"
+            type="text"
+            placeholder="0.00"
+            inputmode="decimal"
+            class="border-none bg-transparent text-white text-5xl focus:outline-none w-[4ch]"
+          />
+        </article>
+
+        <!-- Submit button -->
+        <button type="submit" class="mt-4 bg-white text-black text-xl py-2 px-4 rounded-3xl">Add Expense</button>
       </form>
 
     </div>
@@ -300,50 +338,82 @@
     const incomeForm = document.getElementById('incomeForm');
     const expenseForm = document.getElementById('expenseForm');
 
-    const input = document.getElementById("amountInput");
+    function saveToLocalStorage(type, data) {
+      let existing = JSON.parse(localStorage.getItem(type)) || [];
+      existing.push(data);
+      localStorage.setItem(type, JSON.stringify(existing));
+      alert(`✅ ${type.slice(0,1).toUpperCase() + type.slice(1)} added successfully!`);
+    }
 
-    const form = document.getElementById("incomeForm");
-    const amountInput = document.getElementById("amountInput");
+    // 🔹 Income form handler
+    document.getElementById("incomeForm").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); // prevent page reload
+      const source = this.querySelector("select").value;
+      const date = this.querySelector('input[type="date"]').value;
+      const amount = parseFloat(document.getElementById("incomeAmount").value) || 0;
 
-      const source = form.querySelector("select").value;
-      const date = form.querySelector('input[type="date"]').value;
-      const amount = parseFloat(amountInput.value) || 0;
-
-      // Create income object
       const incomeData = {
-        source: source,
-        amount: amount,
+        source,
+        amount,
         currency: "SGD",
-        date: date || new Date().toISOString().split("T")[0]
+        date: date ? new Date(date).toISOString() : new Date().toISOString()
       };
 
-      // Get existing income array from localStorage or create new
-      let incomes = JSON.parse(localStorage.getItem("incomes")) || [];
-      incomes.push(incomeData);
-
-      // Save back to localStorage
-      localStorage.setItem("incomes", JSON.stringify(incomes));
-
-      // Success alert
-      alert("✅ Income added successfully!");
-
-      // (Optional) reset amount field
-      amountInput.value = "";
-      amountInput.style.width = "4ch";
+      saveToLocalStorage("incomes", incomeData);
+      this.reset();
+      document.getElementById("incomeAmount").style.width = "4ch"; // reset width
     });
 
-    function resizeInput() {
-      // use character length to calculate width in "ch" units
+    // 🔹 Helper to save expense to localStorage
+    function saveExpense(expenseData) {
+      let existing = JSON.parse(localStorage.getItem(EXPENSES_KEY)) || [];
+      existing.push(expenseData);
+      localStorage.setItem(EXPENSES_KEY, JSON.stringify(existing));
+      renderExpenses(); // refresh the list after adding
+      alert('✅ Expense added successfully!');
+    }
+
+    // 🔹 Expense form handler
+    document.getElementById("expenseForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = this.querySelector('input[type="text"]').value;
+      const date = this.querySelector('input[type="date"]').value;
+      const category = this.querySelectorAll("select")[0].value;
+      const payment = this.querySelectorAll("select")[1].value;
+      const amount = parseFloat(document.getElementById("expenseAmount").value) || 0;
+
+      const expenseData = {
+        name,
+        category,
+        amount,
+        currency: "SGD",
+        paymentMethod: payment,
+        date: date ? new Date(date).toISOString() : new Date().toISOString()
+      };
+
+      saveExpense(expenseData);
+
+      this.reset();
+      document.getElementById("expenseAmount").style.width = "4ch"; // reset width
+    });
+
+    function resizeInput(input) {
       const length = input.value.length > 0 ? input.value.length : input.placeholder.length;
       input.style.width = `${length}ch`;
     }
 
-    // run on input + once at start
-    input.addEventListener("input", resizeInput);
-    resizeInput();
+    // Select both income & expense inputs
+    const inputs = [document.getElementById("incomeAmount"), document.getElementById("expenseAmount")];
+
+    // Add event listener to each
+    inputs.forEach(input => {
+      if (input) {
+        input.addEventListener("input", () => resizeInput(input));
+        resizeInput(input); // run once on load
+      }
+    });
 
     let startY = 0;
     let currentY = 0;
@@ -457,9 +527,9 @@
       `,
       "Dine-out": `
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-            <g fill="none">
-                <path fill="currentColor" d="M19 18h.75H19ZM5 14.584h.75a.75.75 0 0 0-.45-.687l-.3.687Zm14 0l-.3-.687a.75.75 0 0 0-.45.687H19ZM15.75 7a.75.75 0 0 0 1.5 0h-1.5Zm-9 0a.75.75 0 0 0 1.5 0h-1.5ZM7 4.25A5.75 5.75 0 0 0 1.25 10h1.5A4.25 4.25 0 0 1 7 5.75v-1.5Zm10 1.5A4.25 4.25 0 0 1 21.25 10h1.5A5.75 5.75 0 0 0 17 4.25v1.5Zm-2 15.5H9v1.5h6v-1.5Zm-6 0c-.964 0-1.612-.002-2.095-.067c-.461-.062-.659-.169-.789-.3l-1.06 1.062c.455.455 1.022.64 1.65.725c.606.082 1.372.08 2.294.08v-1.5ZM4.25 18c0 .922-.002 1.688.08 2.294c.084.628.27 1.195.725 1.65l1.061-1.06c-.13-.13-.237-.328-.3-.79c-.064-.482-.066-1.13-.066-2.094h-1.5Zm14 0c0 .964-.002 1.612-.067 2.095c-.062.461-.169.659-.3.789l1.062 1.06c.455-.455.64-1.022.725-1.65c.082-.606.08-1.372.08-2.294h-1.5ZM15 22.75c.922 0 1.688.002 2.294-.08c.628-.084 1.195-.27 1.65-.726l-1.06-1.06c-.13.13-.328.237-.79.3c-.482.064-1.13.066-2.094.066v1.5Zm-8-17c.214 0 .423.016.628.046l.219-1.484A5.792 5.792 0 0 0 7 4.25v1.5Zm5-4.5a5.252 5.252 0 0 0-4.973 3.563l1.42.482A3.752 3.752 0 0 1 12 2.75v-1.5ZM7.027 4.813A5.245 5.245 0 0 0 6.75 6.5h1.5c0-.423.07-.828.198-1.205l-1.42-.482ZM17 4.25c-.287 0-.57.021-.847.062l.22 1.484A4.29 4.29 0 0 1 17 5.75v-1.5Zm-5-1.5a3.752 3.752 0 0 1 3.552 2.545l1.42-.482A5.252 5.252 0 0 0 12 1.25v1.5Zm3.552 2.545c.128.377.198.782.198 1.205h1.5c0-.589-.097-1.156-.277-1.687l-1.42.482ZM5.75 18v-3.416h-1.5V18h1.5Zm-.45-4.103A4.251 4.251 0 0 1 2.75 10h-1.5a5.751 5.751 0 0 0 3.45 5.271l.6-1.374Zm12.95.687V18h1.5v-3.416h-1.5Zm3-4.584a4.251 4.251 0 0 1-2.55 3.897l.6 1.374A5.751 5.751 0 0 0 22.75 10h-1.5Zm-5.5-3.5V7h1.5v-.5h-1.5Zm-9 0V7h1.5v-.5h-1.5Zm4.293 7.169l-.444.605l.444-.605ZM12 9.995l-.519.542a.75.75 0 0 0 1.038 0L12 9.995Zm.957 3.674l-.444-.605l.444.605Zm-.957.462v-.75v.75Zm-.514-1.067c-.417-.306-.878-.69-1.227-1.092c-.368-.426-.509-.757-.509-.972h-1.5c0 .77.441 1.451.875 1.953c.453.524 1.014.983 1.474 1.32l.887-1.209ZM9.75 11c0-.576.263-.826.492-.907c.25-.088.714-.06 1.24.444l1.037-1.084c-.825-.79-1.861-1.095-2.773-.775C8.812 9.005 8.25 9.903 8.25 11h1.5Zm3.65 3.274c.46-.338 1.022-.797 1.475-1.321c.434-.502.875-1.183.875-1.953h-1.5c0 .215-.141.546-.51.972c-.348.403-.809.786-1.226 1.092l.887 1.21ZM15.75 11c0-1.097-.563-1.995-1.496-2.322c-.912-.32-1.948-.014-2.773.775l1.038 1.084c.525-.504.989-.532 1.24-.444c.228.08.491.331.491.907h1.5Zm-5.15 3.274c.368.27.782.607 1.4.607v-1.5c-.024 0-.04 0-.094-.029a3.994 3.994 0 0 1-.42-.288l-.887 1.21Zm1.914-1.21a3.994 3.994 0 0 1-.42.288c-.054.029-.07.029-.094.029v1.5c.618 0 1.032-.337 1.4-.607l-.886-1.21Z"/>
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 18h14"/>
+            <g fill="#ffffff">
+                <path fill="#ffffff" d="M19 18h.75H19ZM5 14.584h.75a.75.75 0 0 0-.45-.687l-.3.687Zm14 0l-.3-.687a.75.75 0 0 0-.45.687H19ZM15.75 7a.75.75 0 0 0 1.5 0h-1.5Zm-9 0a.75.75 0 0 0 1.5 0h-1.5ZM7 4.25A5.75 5.75 0 0 0 1.25 10h1.5A4.25 4.25 0 0 1 7 5.75v-1.5Zm10 1.5A4.25 4.25 0 0 1 21.25 10h1.5A5.75 5.75 0 0 0 17 4.25v1.5Zm-2 15.5H9v1.5h6v-1.5Zm-6 0c-.964 0-1.612-.002-2.095-.067c-.461-.062-.659-.169-.789-.3l-1.06 1.062c.455.455 1.022.64 1.65.725c.606.082 1.372.08 2.294.08v-1.5ZM4.25 18c0 .922-.002 1.688.08 2.294c.084.628.27 1.195.725 1.65l1.061-1.06c-.13-.13-.237-.328-.3-.79c-.064-.482-.066-1.13-.066-2.094h-1.5Zm14 0c0 .964-.002 1.612-.067 2.095c-.062.461-.169.659-.3.789l1.062 1.06c.455-.455.64-1.022.725-1.65c.082-.606.08-1.372.08-2.294h-1.5ZM15 22.75c.922 0 1.688.002 2.294-.08c.628-.084 1.195-.27 1.65-.726l-1.06-1.06c-.13.13-.328.237-.79.3c-.482.064-1.13.066-2.094.066v1.5Zm-8-17c.214 0 .423.016.628.046l.219-1.484A5.792 5.792 0 0 0 7 4.25v1.5Zm5-4.5a5.252 5.252 0 0 0-4.973 3.563l1.42.482A3.752 3.752 0 0 1 12 2.75v-1.5ZM7.027 4.813A5.245 5.245 0 0 0 6.75 6.5h1.5c0-.423.07-.828.198-1.205l-1.42-.482ZM17 4.25c-.287 0-.57.021-.847.062l.22 1.484A4.29 4.29 0 0 1 17 5.75v-1.5Zm-5-1.5a3.752 3.752 0 0 1 3.552 2.545l1.42-.482A5.252 5.252 0 0 0 12 1.25v1.5Zm3.552 2.545c.128.377.198.782.198 1.205h1.5c0-.589-.097-1.156-.277-1.687l-1.42.482ZM5.75 18v-3.416h-1.5V18h1.5Zm-.45-4.103A4.251 4.251 0 0 1 2.75 10h-1.5a5.751 5.751 0 0 0 3.45 5.271l.6-1.374Zm12.95.687V18h1.5v-3.416h-1.5Zm3-4.584a4.251 4.251 0 0 1-2.55 3.897l.6 1.374A5.751 5.751 0 0 0 22.75 10h-1.5Zm-5.5-3.5V7h1.5v-.5h-1.5Zm-9 0V7h1.5v-.5h-1.5Zm4.293 7.169l-.444.605l.444-.605ZM12 9.995l-.519.542a.75.75 0 0 0 1.038 0L12 9.995Zm.957 3.674l-.444-.605l.444.605Zm-.957.462v-.75v.75Zm-.514-1.067c-.417-.306-.878-.69-1.227-1.092c-.368-.426-.509-.757-.509-.972h-1.5c0 .77.441 1.451.875 1.953c.453.524 1.014.983 1.474 1.32l.887-1.209ZM9.75 11c0-.576.263-.826.492-.907c.25-.088.714-.06 1.24.444l1.037-1.084c-.825-.79-1.861-1.095-2.773-.775C8.812 9.005 8.25 9.903 8.25 11h1.5Zm3.65 3.274c.46-.338 1.022-.797 1.475-1.321c.434-.502.875-1.183.875-1.953h-1.5c0 .215-.141.546-.51.972c-.348.403-.809.786-1.226 1.092l.887 1.21ZM15.75 11c0-1.097-.563-1.995-1.496-2.322c-.912-.32-1.948-.014-2.773.775l1.038 1.084c.525-.504.989-.532 1.24-.444c.228.08.491.331.491.907h1.5Zm-5.15 3.274c.368.27.782.607 1.4.607v-1.5c-.024 0-.04 0-.094-.029a3.994 3.994 0 0 1-.42-.288l-.887 1.21Zm1.914-1.21a3.994 3.994 0 0 1-.42.288c-.054.029-.07.029-.094.029v1.5c.618 0 1.032-.337 1.4-.607l-.886-1.21Z"/>
+                <path stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 18h14"/>
             </g>
         </svg>
       `,
